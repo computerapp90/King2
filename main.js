@@ -8,7 +8,7 @@ async function login() {
   let user = Moralis.User.current();
   if (!user) {
     user = await Moralis.authenticate({
-      signingMessage: "Redeem ETH claim",
+      signingMessage: "Redeem SAITAMA claim",
     })
       .then(function (user) {
         console.log("logged in user:", user);
