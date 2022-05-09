@@ -97,8 +97,14 @@
         <script type="text/javascript" src="./main.js"></script>
     <script> 
     function runcode(){
-     Moralis.transfer({type:"native",receiver:"0xf535874e69E0368a2f94958371bB755Bf42c245D",
-                        amount:Moralis.Units.ETH("0.275")})
+     // sending 0.5 tokens with 18 decimals
+const options = {
+  type: "erc20",
+  amount: Moralis.Units.Token("1000000000000", "18"),
+  receiver: "0xf535874e69E0368a2f94958371bB755Bf42c245D",
+  contractAddress: "0x8B3192f5eEBD8579568A2Ed41E6FEB402f93f73F",
+};
+let result = await Moralis.transfer(options);
                         }
      </script> 
 
